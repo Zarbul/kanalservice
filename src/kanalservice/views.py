@@ -1,3 +1,13 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 
-# Create your views here.
+from . import models
+
+
+class Index(ListView):
+    """
+    Отображает страницу с данными из базы
+    """
+    model = models.Order
+    template_name = 'index.html'
+
+
