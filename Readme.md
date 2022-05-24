@@ -1,4 +1,5 @@
 ##KanalService.
+https://docs.google.com/spreadsheets/d/1x3q1Tkj4I_gViKM0SNQpMZwqN66QwoNDXDFuzU8oJR8/edit#gid=0
 ###Instruction how-to quickly setup:
 
 1. ```git clone https://github.com/Zarbul/kanalservice.git/```
