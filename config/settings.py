@@ -1,5 +1,4 @@
 from pathlib import Path
-import os
 from os import environ
 from dotenv import load_dotenv
 
@@ -103,12 +102,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
+LANGUAGE_CODE = 'ru'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
-
 USE_TZ = True
 
 
@@ -125,3 +122,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# rabbitmq settings
+RABBIT_USERNAME = environ.get("RABBIT_USERNAME")
+RABBIT_PASSWORD = environ.get("RABBIT_PASSWORD")
+RABBIT_URL = environ.get("RABBIT_URL")
+RABBIT_PORT = environ.get("RABBIT_PORT")
+RABBIT_HOST = environ.get("RABBIT_HOST")
+
+CELERY_BROKER_URL = f'amqp://{RABBIT_USERNAME}:{RABBIT_PASSWORD}@{RABBIT_URL}:{RABBIT_PORT}/{RABBIT_HOST}'
